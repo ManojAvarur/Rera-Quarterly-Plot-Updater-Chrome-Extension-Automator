@@ -1,5 +1,5 @@
 
-# Rera Plot Atuomation
+# Rera Quarterly Plot Updation Atuomation
 
 ### Although it is a react-based project, it cannot be carried out in the conventional way.
 #### To run the application:
