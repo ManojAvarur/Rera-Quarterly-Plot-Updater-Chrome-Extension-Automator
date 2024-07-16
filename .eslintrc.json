@@ -1,0 +1,12 @@
+{
+    "globals": {
+      "chrome": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2023,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
+}

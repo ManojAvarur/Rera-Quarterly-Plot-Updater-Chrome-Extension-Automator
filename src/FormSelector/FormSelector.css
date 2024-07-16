@@ -1,0 +1,19 @@
+.fs-title{
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.fs-current-index{
+    text-align: center;
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+.fs-actions-caontiner{
+    margin: auto;
+}
+
+.fs-itr-btns button{
+    margin-left: 5px;
+    margin-right: 5px;
+}
