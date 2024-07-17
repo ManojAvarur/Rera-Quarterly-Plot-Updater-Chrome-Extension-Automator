@@ -1,0 +1,64 @@
+.ac-strategy-label,
+.ac-title{
+    /* font-size: 1.2rem; */
+    text-align: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.ac-current-index{
+    font-size: 17px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 2px;
+}
+
+.ac-actions-caontiner{
+    margin: auto;
+    margin-top: 10px;
+}
+
+.ac-itr-btns{
+    margin-top: 10px;
+}
+
+.ac-itr-btns button{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.ac-strategy-label{
+    margin: 0;
+    font-size: 16px;
+}
+
+input[type=radio]{
+    display: none;
+}
+
+input[type=radio] + label{
+    display: inline-block;    
+    background-color: #dedede;
+    border-radius: 10px;
+    padding: 20px;
+    opacity: 0.6;
+    transition: .3s;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+input[type=radio] + label:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+
+input[type=radio]:checked + label{
+    background-color: #606060;
+    color: #fff;
+    opacity: 1;
+}
+
+input[type=radio]:disabled + label{
+    opacity: 0.6;
+    cursor: not-allowed;
+}

@@ -96,7 +96,23 @@ function FormSelector(props){
         setFormsArray(prev => ({ ...prev, currentItrIndex: newIndex, previousIndex: currentIndex }))
     }
 
-    function formSelection(){
+    async function formSelection(){
+        const response = await chrome.tabs.sendMessage(
+            tabData.id, {
+                type: "FUNCTION_CALL",
+                functionName: "FORM_SELECTION",
+                payload: {
+                    xpath: formsArray.data[formsArray.currentItrIndex],
+                }
+            }
+        );
+
+        if(response.status !== 200){
+            return setError('Form selection failed!')
+        }
+
+        if(alert !== '') setAlert('');
+
         props.selectForm(formsArray.data[formsArray.currentItrIndex])
     }
 

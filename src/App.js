@@ -5,11 +5,13 @@ import FormSelector from './FormSelector/FormSelector';
 import TabContext from './context/tab-context';
 import AlertContext from './context/alert-context';
 import ErrorContext from './context/error-context';
+import AutomationCtrl from './AutomationCtrl/AutomationCtrl';
 
 
 function App() {
 	const [currentTabIndex, setCurrentTabIndexState] = useState(0);
 	const [selectedForm, setSelectedForm] = useState(null);
+	const [processedData, setProcessedData] = useState(null);
 	const alertCtx = useContext(AlertContext);
 	const tabCtx = useContext(TabContext);
 	const errorCtx = useContext(ErrorContext);
@@ -23,7 +25,7 @@ function App() {
 			}).then(_ => {
 				tabCtx.setTabData(tab);
 			}).catch(err => {
-				errorCtx.setError("Failed to initial scripts")
+				errorCtx.setError("Failed to initialize scripts")
 			})
 		})();
 	}, [])
@@ -62,10 +64,20 @@ function App() {
 							</div>
 						</nav>
 						<main>
-							{{
-								0: <FormSelector selectForm={selectForm} />,
-								1: <Input />
-							}[currentTabIndex]}
+							{[
+								<FormSelector 
+									selectForm={selectForm} 
+								/>,
+								<Input 
+									selectedForm={selectedForm} 
+									setCurrentTabIndexState={setCurrentTabIndexState} 
+									setProcessedData={setProcessedData}
+								/>,
+								<AutomationCtrl 
+									processedData={processedData} 
+									setCurrentTabIndexState={setCurrentTabIndexState} 
+								/>
+							][currentTabIndex]}
 						</main>
 						<footer>
 							<h3>Coded with ❤ by Manoj</h3>
